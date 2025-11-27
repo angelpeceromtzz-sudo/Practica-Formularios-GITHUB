@@ -1,0 +1,35 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f3f4f6;
+}
+
+
+.menu-card {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    background-color: white;
+    padding: 3rem;
+}
+
+.link-card {
+    border: 1px solid #dee2e6;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    display: block;
+}
+.link-card:hover {
+    border-color: #0d6efd; 
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.15);
+}
+.link-card-body {
+    padding: 1.5rem;
+}
+.icon-box {
+    font-size: 2.5rem;
+    color: #0d6efd; 
+    margin-bottom: 0.5rem;
+}
