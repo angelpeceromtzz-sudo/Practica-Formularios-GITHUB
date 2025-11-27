@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Empleo</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   
+    <style>
+          body {
+           
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+  
+        :root {
+            --bs-primary-color: #0d6efd;
+            --bs-primary-light: #e6f0ff;
+            --bs-primary-hover: #0b5ed7;
+        }
+
+        .form-card {
+            
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--bs-primary-color); 
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+        }
+
+      
+        .form-control:focus, .form-select:focus {
+            border-color: var(--bs-primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25); 
+        }
+
+      
+        .btn-custom-primary {
+            background-color: var(--bs-primary-color); 
+            border-color: var(--bs-primary-color);
+            transition: all 0.2s ease-in-out;
+            color: white;
+            font-weight: 600;
+        }
+        .btn-custom-primary:hover {
+            background-color: var(--bs-primary-hover); 
+            border-color: var(--bs-primary-hover);
+            transform: translateY(-1px);
+            color: white;
+        }
+
+        .btn-custom-secondary {
+            color: var(--bs-primary-color); 
+            background-color: var(--bs-primary-light); 
+            border-color: var(--bs-primary-color); 
+            transition: all 0.2s ease-in-out;
+            font-weight: 600;
+        }
+        .btn-custom-secondary:hover {
+            background-color: #cce0ff; 
+            color: var(--bs-primary-hover); 
+            border-color: var(--bs-primary-hover);
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body class="d-flex align-items-center justify-content-center min-vh-100 p-4">
+
+
+    <div class="container">
+        <div class="row justify-content-center">
+             <div class="col-12 col-md-8 col-lg-7">
+                <div class="form-card">
+
+               
+                    <h1 class="h3 fw-bold text-dark text-center mb-3">
+                        Formulario de Solicitud de Empleo
+                    </h1>
+                    <p class="text-center text-secondary mb-4">
+                        Completa tus datos y adjunta tu currículum vitae.
+                    </p>
+
+                    <form action="#" method="POST" enctype="multipart/form-data">
+                        
+                     
+                        <div class="mb-3">
+                            <label for="nombre_completo" class="form-label text-muted">Nombre Completo</label>
+                            <input type="text" id="nombre_completo" name="nombre_completo" placeholder="Escribe tu nombre y apellido" required
+                                class="form-control">
+                        </div>
+
+                        
+                        <div class="row mb-3">
+                           
+                            <div class="col-md-6">
+                                <label for="email" class="form-label text-muted">Email</label>
+                                <input type="email" id="email" name="email" placeholder="ejemplo@dominio.com" required
+                                    class="form-control">
+                            </div>
+                           
+                            <div class="col-md-6">
+                                <label for="telefono" class="form-label text-muted">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" placeholder="+XX XXX XXX XXXX"
+                                    class="form-control">
+                            </div>
+                        </div>
+
+                       
+                        <div class="mb-3">
+                            <label for="puesto_solicitado" class="form-label text-muted">Puesto Solicitado</label>
+                            <input type="text" id="puesto_solicitado" name="puesto_solicitado" placeholder="Ej: Desarrollador Web Senior" required
+                                class="form-control">
+                        </div>
+
+                        
+                        <div class="mb-4">
+                            <label for="expectativa_salarial" class="form-label text-muted">Expectativa Salarial (Mensual Bruto)</label>
+                            <input type="text" id="expectativa_salarial" name="expectativa_salarial" placeholder="Ej: $1,500.00 USD o 30,000.00 MXN"
+                                class="form-control">
+                            <div class="form-text">Indica la moneda y el monto deseado.</div>
+                        </div>
+                        
+                    
+                        <div class="mb-5">
+                            <label for="cv_file" class="form-label text-muted">Subir CV (Solo PDF/DOCX)</label>
+                            <input class="form-control" type="file" id="cv_file" name="cv_file" accept=".pdf,.docx" required>
+                            <div class="form-text">El archivo no debe exceder los 5MB.</div>
+                        </div>
+                        
+                      
+                       <div class="d-grid gap-2">
+                            <button type="submit"
+                                class="btn btn-custom-primary btn-lg">
+                               Enviar solicitud
+                            </button>
+                            <a href="../index.html" 
+                               class="btn btn-custom-secondary btn-lg">
+                                Regresar al Inicio
+                            </a>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cita Médica</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <style>
+         body {
+         
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        } 
+        :root {
+            --bs-primary-color: #0d6efd;
+            --bs-primary-light: #e6f0ff;
+            --bs-primary-hover: #0b5ed7;
+        }
+        .form-card {
+            
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--bs-primary-color); 
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: var(--bs-primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25); 
+        }
+
+        .btn-custom-primary {
+            background-color: var(--bs-primary-color); 
+            border-color: var(--bs-primary-color);
+            transition: all 0.2s ease-in-out;
+            color: white;
+            font-weight: 600;
+        }
+        .btn-custom-primary:hover {
+            background-color: var(--bs-primary-hover); 
+            border-color: var(--bs-primary-hover);
+            transform: translateY(-1px);
+            color: white;
+        }       
+        .btn-custom-secondary {
+            color: var(--bs-primary-color); 
+            background-color: var(--bs-primary-light); 
+            border-color: var(--bs-primary-color); 
+            transition: all 0.2s ease-in-out;
+            font-weight: 600;
+        }
+        .btn-custom-secondary:hover {
+            background-color: #cce0ff; 
+            color: var(--bs-primary-hover); 
+            border-color: var(--bs-primary-hover);
+            transform: translateY(-1px);
+        }
+        input[type="date"]::-webkit-calendar-picker-indicator,
+        input[type="time"]::-webkit-calendar-picker-indicator {
+            cursor: pointer;
+            filter: invert(0.5) sepia(1) saturate(5) hue-rotate(180deg); 
+        }
+    </style>
+</head>
+<body class="d-flex align-items-center justify-content-center min-vh-100 p-4">
+  
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-7">
+                <div class="form-card">
+                    
+                    <h1 class="h3 fw-bold text-dark text-center mb-3">
+                        Agendar Cita Médica
+                    </h1>
+                    <p class="text-center text-secondary mb-4">
+                        Por favor, completa los detalles de tu consulta.
+                    </p>
+
+                    <form action="#" method="POST">                     
+                                         
+                        <div class="row g-3 mb-3">                            
+
+                            <div class="col-md-6">
+                                <label for="nombre_paciente" class="form-label text-muted">Nombre del Paciente</label>
+                                <input type="text" id="nombre_paciente" name="nombre_paciente" placeholder="Tu nombre y apellido" required
+                                    class="form-control form-control-lg">
+                                
+                                <div class="invalid-feedback d-block text-danger small" style="display:none;">El nombre es obligatorio.</div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="edad" class="form-label text-muted">Edad</label>
+                                <input type="number" id="edad" name="edad" placeholder="Ej: 30" min="1" max="120" required
+                                    class="form-control form-control-lg">
+                                <div class="form-text">Solo números.</div>
+                            </div>
+
+                        </div>
+                    
+            
+                        <div class="mb-3">
+                            <label for="tipo_consulta" class="form-label text-muted">Tipo de Consulta</label>
+                            <select id="tipo_consulta" name="tipo_consulta" required
+                                class="form-select form-select-lg">
+                                <option value="">Selecciona la especialidad...</option>
+                                <option value="medicina_general">Medicina General</option>
+                                <option value="pediatria">Pediatría</option>
+                                <option value="cardiologia">Cardiología</option>
+                                <option value="dermatologia">Dermatología</option>
+                                <option value="otro">Otro / Control</option>
+                            </select>
+                        </div>
+                        
+                    
+                        
+                        <div class="row g-3 mb-4">
+                                                       
+                            <div class="col-md-6">
+                                <label for="fecha" class="form-label text-muted">Fecha Deseada</label>
+                                <input type="date" id="fecha" name="fecha" required
+                                    class="form-control form-control-lg">
+                                
+                                <div class="invalid-feedback d-block text-danger small" style="display:none;">Selecciona una fecha válida.</div>
+                            </div>
+                        
+                           <div class="col-md-6">
+                                <label for="hora" class="form-label text-muted">Hora Preferida</label>
+                                <input type="time" id="hora" name="hora" required
+                                    class="form-control form-control-lg">
+                                <div class="form-text">Ej: 15:30</div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="mb-5">
+                            <label for="sintomas" class="form-label text-muted">Síntomas Principales</label>
+                            <textarea id="sintomas" name="sintomas" rows="3" placeholder="Describe brevemente tus síntomas o motivo de consulta..." required
+                                class="form-control"></textarea>
+                            
+                            <div class="form-text text-warning">Sé lo más detallado posible.</div>
+                        </div>
+                        
+                        
+                        <div class="d-grid gap-2">
+                            <button type="submit"
+                                class="btn btn-custom-primary btn-lg">
+                                Agendar Cita
+                            </button>
+                            <a href="../index.html" 
+                               class="btn btn-custom-secondary btn-lg">
+                                Regresar al Inicio
+                            </a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

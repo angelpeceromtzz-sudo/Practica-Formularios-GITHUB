@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Pedido</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <style>
+       body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        
+        
+        :root {
+            --bs-primary: #0d6efd;
+            --bs-primary-light: #e6f0ff;
+            --bs-primary-hover: #0b5ed7;
+        }
+
+        .form-card {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--bs-primary); 
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--bs-primary);
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25); 
+        }
+
+        .btn-custom-primary {
+            background-color: var(--bs-primary); 
+            border-color: var(--bs-primary);
+            transition: all 0.2s ease-in-out;
+            color: white;
+            font-weight: 600;
+        }
+        .btn-custom-primary:hover {
+            background-color: var(--bs-primary-hover);
+            border-color: var(--bs-primary-hover);
+            transform: translateY(-1px);
+            color: white;
+        }
+        
+        .btn-custom-secondary {
+            color: var(--bs-primary); 
+            background-color: var(--bs-primary-light); 
+            border-color: var(--bs-primary);
+            transition: all 0.2s ease-in-out;
+            font-weight: 600;
+        }
+        .btn-custom-secondary:hover {
+            background-color: #cce0ff; 
+            color: var(--bs-primary-hover); 
+            border-color: var(--bs-primary-hover); 
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body class="d-flex align-items-center justify-content-center min-vh-100 p-4">
+
+    <div class="container">
+        <div class="row justify-content-center">
+             <div class="col-12 col-md-8 col-lg-7">
+                <div class="form-card">
+
+                    <h1 class="h3 fw-bold text-dark text-center mb-3">
+                        Finalizar Pedido
+                    </h1>
+                    <p class="text-center text-secondary mb-4">
+                        Revisa los detalles y confirma tu compra.
+                    </p>
+
+                    <form action="#" method="POST">
+                        <div class="row g-3 mb-4">
+                            
+                            <div class="col-md-7">
+                                <label for="producto" class="form-label text-muted">Producto</label>
+                                <select id="producto" name="producto" required
+                                    class="form-select">
+                                    <option value="">Selecciona un producto...</option>
+                                    <option value="libro">Libro: Crónicas del Silencio</option>
+                                    <option value="camiseta">Camiseta de Algodón Premium</option>
+                                    <option value="cafe">Bolsa de Café Especial</option>
+                                    <option value="accesorio">Accesorio Electrónico</option>
+                                </select>
+                                <div class="invalid-feedback">Debes seleccionar un producto.</div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <label for="cantidad" class="form-label text-muted">Cantidad</label>
+                                <input type="number" id="cantidad" name="cantidad" placeholder="Mínimo 1" min="1" max="100" value="1" required
+                                    class="form-control">
+                                <div class="form-text">Stock limitado.</div>
+                            </div>
+
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="direccion" class="form-label text-muted">Dirección de Envío Completa</label>
+                            <textarea id="direccion" name="direccion" rows="3" placeholder="Calle, número, ciudad, código postal..." required
+                                class="form-control"></textarea>
+                        </div>
+
+                        <div class="mb-5">
+                            <label class="form-label text-muted mb-3 d-block">Método de Pago</label>
+                            <div class="row g-2">
+                                
+                                <div class="col-4">
+                                    <input type="radio" class="btn-check" name="metodo_pago" id="pago_tarjeta" value="tarjeta" required>
+                                    <label class="btn btn-outline-custom w-100 btn-outline-secondary" for="pago_tarjeta">Tarjeta</label>
+                                </div>
+
+                           
+                                <div class="col-4">
+                                    <input type="radio" class="btn-check" name="metodo_pago" id="pago_transferencia" value="transferencia">
+                                    <label class="btn btn-outline-custom w-100 btn-outline-secondary" for="pago_transferencia">Transferencia</label>
+                                </div>
+
+                              
+                                <div class="col-4">
+                                    <input type="radio" class="btn-check" name="metodo_pago" id="pago_paypal" value="paypal">
+                                    <label class="btn btn-outline-custom w-100 btn-outline-secondary" for="pago_paypal">PayPal</label>
+                                </div>
+                            </div>
+                            <div class="form-text mt-2">Selecciona tu método preferido.</div>
+                        </div>
+                        
+                        
+                        <div class="d-grid gap-2">
+                            <button type="submit"
+                                class="btn btn-custom-primary btn-lg">
+                                Confirmar Pedido
+                                
+                            </button>
+                            <a href="../index.html" 
+                               class="btn btn-custom-secondary btn-lg">
+                                Regresar al Inicio
+                                </a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
